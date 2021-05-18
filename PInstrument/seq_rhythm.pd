@@ -1,0 +1,69 @@
+#N canvas 72 1605 902 551 12;
+#X obj 205 150 tgl 25 0 empty empty empty 17 7 0 10 -191407 -1 -1 0
+1;
+#X obj 231 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 257 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 283 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 309 150 tgl 25 0 empty empty empty 17 7 0 10 -191407 -1 -1 0
+1;
+#X obj 335 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 361 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 387 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 413 150 tgl 25 0 empty empty empty 17 7 0 10 -191407 -1 -1 0
+1;
+#X obj 439 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 465 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 491 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 517 150 tgl 25 0 empty empty empty 17 7 0 10 -191407 -1 -1 0
+1;
+#X obj 543 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 569 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 595 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 621 150 tgl 25 0 empty empty empty 17 7 0 10 -191407 -1 -1 0
+1;
+#X obj 647 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 673 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 699 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 725 150 tgl 25 0 empty empty empty 17 7 0 10 -191407 -1 -1 0
+1;
+#X obj 751 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 777 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 803 150 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 103 150 nbx 3 35 1 24 0 0 empty empty empty 0 -8 0 30 -228856
+-1 -1 1 256;
+#X obj 103 187 nbx 3 35 1 24 0 0 empty empty empty 0 -8 0 30 -228856
+-1 -1 1 256;
+#X obj 698 48 namecanvas \$0-seqsize;
+#X obj 351 516 s \$0-seqsize;
+#X obj 351 268 - 1;
+#X obj 351 291 * 26;
+#X obj 351 315 + 132;
+#X msg 281 463 donecanvasdialog 0 0 1 0 -1 1 1 \$1 160 100 100 1 \;
+;
+#X msg 432 405 coords 0 0 260 160 \$1 160 1 \;;
+#X msg 351 489 canvas 0 0 \$1 160 \;;
+#X connect 24 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 30 0 33 0;
+#X connect 33 0 27 0;
+#X coords 0 0 260 160 340 160 1 0 0;

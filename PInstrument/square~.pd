@@ -1,0 +1,6 @@
+#N canvas 5 496 450 300 12;
+#X obj 43 43 phasor~ \$1;
+#X obj 43 67 expr~ if ($v1 > 0.5 \, 1 \, -1);
+#X obj 43 91 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;

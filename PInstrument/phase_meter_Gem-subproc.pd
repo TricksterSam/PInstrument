@@ -1,0 +1,47 @@
+#N canvas 966 1387 902 725 12;
+#X obj 158 10 loadbang;
+#X obj 177 124 vsl 35 128 0 8.5 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 12700 1;
+#X obj 139 124 vsl 35 128 0 8 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 7700 1;
+#X obj 101 122 vradio 35 1 0 3 empty empty empty 0 -8 0 10 -228856
+-1 -1 0;
+#X obj 239 122 vsl 25 128 100 1000 0 0 empty empty empty 0 -9 0 10
+-228856 -1 -1 0 1;
+#X msg 239 261 dimen \$1 \$1;
+#X obj 111 229 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X msg 177 44 2, f 2;
+#X msg 158 73 6;
+#X obj 453 438 adc~ 1;
+#X obj 503 467 adc~ 2;
+#X obj 547 494 adc~ 3;
+#X msg 379 551 pd~ stop;
+#X msg 181 459 window \$1;
+#X msg 259 438 length \$1;
+#X msg 209 388 style \$1;
+#X msg 269 354 amplitude \$1;
+#X msg 366 527 pd~ start XYscope-Gem.pd;
+#X obj 366 453 sel 1 0;
+#X obj 382 591 pd~ -ninsig 3 -noutsig 0 -fifo 20;
+#X connect 0 0 7 0;
+#X connect 0 0 8 0;
+#X connect 1 0 16 0;
+#X connect 2 0 14 0;
+#X connect 3 0 15 0;
+#X connect 4 0 5 0;
+#X connect 6 0 13 0;
+#X connect 6 0 18 0;
+#X connect 7 0 1 0;
+#X connect 8 0 2 0;
+#X connect 9 0 19 0;
+#X connect 10 0 19 1;
+#X connect 11 0 19 2;
+#X connect 12 0 19 0;
+#X connect 14 0 19 0;
+#X connect 15 0 19 0;
+#X connect 16 0 19 0;
+#X connect 17 0 19 0;
+#X connect 18 0 17 0;
+#X connect 18 1 12 0;
+#X coords 0 -1 1 1 114 160 1 100 100;

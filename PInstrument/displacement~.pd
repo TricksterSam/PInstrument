@@ -1,0 +1,185 @@
+#N canvas 231 223 1369 839 12;
+#X obj 10 10 cnv 5 500 356 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X msg 537 188 bang;
+#X obj 424 24 sigsend~;
+#X obj 50 670 / 120;
+#X obj 50 694 sig~;
+#X obj 339 24 sigrec~;
+#X obj 537 92 env~ 16 16;
+#X obj 537 116 > 70;
+#X obj 537 140 change;
+#X obj 537 164 sel 1;
+#X obj 254 24 sigrec~;
+#X obj 537 299 int;
+#X obj 537 252 snapshot~;
+#X obj 435 402 abs~;
+#X obj 50 642 int;
+#X obj 50 618 + 0.5;
+#X obj 555 479 f \$0;
+#X obj 73 418 bng 36 250 50 0 empty empty PR 6 18 0 20 -204786 -1 -1
+;
+#X obj 814 479 f \$0;
+#X obj 147 418 bng 36 250 50 0 empty empty ET 6 18 0 20 -204786 -1
+-1;
+#X obj 684 479 f \$0;
+#X obj 110 418 bng 36 250 50 0 empty empty ES 6 18 0 20 -204786 -1
+-1;
+#X obj 537 212 del 4;
+#X obj 804 439 s;
+#X obj 887 364 pack f \$0;
+#X obj 887 338 f;
+#X obj 822 282 pack f \$0;
+#X obj 822 256 f;
+#X obj 804 168 t b f f b b;
+#X msg 887 388 symbol \$2-pitch\$1-r;
+#X msg 822 306 symbol \$2-pitch\$1-r;
+#X msg 813 196 color #c4fcc4 -1 -1;
+#X msg 797 232 color #b4e4b4 -1 -1;
+#X obj 537 275 * 12.5;
+#X floatatom 611 165 5 0 0 0 - - -;
+#X floatatom 638 290 5 0 0 0 - - -;
+#X floatatom 646 240 5 0 0 0 - - -;
+#X obj 184 418 bng 36 250 50 0 empty empty S 6 18 0 20 -204786 -1 -1
+;
+#X text 70 403 -DISPLACED_PITCH-;
+#X text 362 111 trig cv;
+#X obj 94 109 pitch-select 2 \$0;
+#X obj 177 109 pitch-select 3 \$0;
+#X obj 260 109 pitch-select 4 \$0;
+#X obj 343 109 pitch-select 5 \$0;
+#X obj 426 109 pitch-select 6 \$0;
+#X obj 11 194 pitch-select 7 \$0;
+#X obj 94 194 pitch-select 8 \$0;
+#X obj 177 194 pitch-select 9 \$0;
+#X obj 260 194 pitch-select 10 \$0;
+#X obj 343 194 pitch-select 11 \$0;
+#X obj 426 194 pitch-select 12 \$0;
+#X obj 217 584 int;
+#X obj 15 25 hsl 236 83 1 18 0 0 \$0-stepq-nowhere \$0-stepq-r 12\ steps
+4 40 0 40 -204786 -43725 -66577 15206 1;
+#X obj 217 652 s \$0-stepq-r;
+#X msg 217 625 label \$1\\\ steps;
+#X obj 424 632 + 0.5;
+#X floatatom 456 514 5 0 0 0 - - -;
+#X obj 11 109 pitch-select 1 \$0;
+#X obj 949 478 f \$0;
+#X obj 11 279 pitch-select 13 \$0;
+#X obj 94 279 pitch-select 14 \$0;
+#X obj 177 279 pitch-select 15 \$0;
+#X obj 260 279 pitch-select 16 \$0;
+#X obj 343 279 pitch-select 17 \$0;
+#X obj 426 279 pitch-select 18 \$0;
+#X msg 555 504 \; \$1-pitch1-r 32 \; \$1-pitch2-r 36 \; \$1-pitch3-r
+41 \; \$1-pitch4-r 47 \; \$1-pitch5-r 51 \; \$1-pitch6-r 54 \; \$1-pitch7-r
+58 \; \$1-pitch8-r 61 \; \$1-pitch9-r 64 \; \$1-pitch10-r 67 \; \$1-pitch11-r
+69 \; \$1-pitch12-r 74 \; \$1-pitch13-r -2 \; \$1-pitch14-r -2 \; \$1-pitch15-r
+-2 \; \$1-pitch16-r -2 \; \$1-pitch17-r -2 \; \$1-pitch18-r -2 \;;
+#X msg 684 504 \; \$1-pitch4-r 32 \; \$1-pitch12-r 36 \; \$1-pitch7-r
+41 \; \$1-pitch5-r 47 \; \$1-pitch1-r 51 \; \$1-pitch3-r 54 \; \$1-pitch11-r
+58 \; \$1-pitch6-r 61 \; \$1-pitch2-r 64 \; \$1-pitch10-r 67 \; \$1-pitch9-r
+69 \; \$1-pitch8-r 74 \; \$1-pitch13-r -2 \; \$1-pitch14-r -2 \; \$1-pitch15-r
+-2 \; \$1-pitch16-r -2 \; \$1-pitch17-r -2 \; \$1-pitch18-r -2 \;;
+#X msg 814 504 \; \$1-pitch1-r 22 \; \$1-pitch2-r 29 \; \$1-pitch3-r
+35 \; \$1-pitch4-r 37 \; \$1-pitch5-r 40 \; \$1-pitch6-r 45 \; \$1-pitch7-r
+50 \; \$1-pitch8-r 56 \; \$1-pitch9-r 60 \; \$1-pitch10-r 63 \; \$1-pitch11-r
+66 \; \$1-pitch12-r 67 \; \$1-pitch13-r -2 \; \$1-pitch14-r -2 \; \$1-pitch15-r
+-2 \; \$1-pitch16-r -2 \; \$1-pitch17-r -2 \; \$1-pitch18-r -2 \;;
+#X msg 949 503 \; \$1-pitch11-r 22 \; \$1-pitch6-r 29 \; \$1-pitch9-r
+35 \; \$1-pitch4-r 37 \; \$1-pitch3-r 40 \; \$1-pitch12-r 45 \; \$1-pitch2-r
+50 \; \$1-pitch1-r 56 \; \$1-pitch10-r 60 \; \$1-pitch5-r 63 \; \$1-pitch8-r
+66 \; \$1-pitch7-r 67 \; \$1-pitch13-r -2 \; \$1-pitch14-r -2 \; \$1-pitch15-r
+-2 \; \$1-pitch16-r -2 \; \$1-pitch17-r -2 \; \$1-pitch18-r -2 \;;
+#X obj 256 10 cnv 10 81 12 empty empty CV_select 3 7 0 11 -262144 -99865
+0;
+#X obj 426 10 cnv 10 81 12 empty empty output 3 7 0 11 -262144 -99865
+0;
+#X obj 341 10 cnv 10 81 12 empty empty trigger 3 7 0 11 -262144 -99865
+0;
+#X obj 13 10 cnv 10 239 12 empty empty number_of_steps 3 7 0 11 -262144
+-99865 0;
+#X obj 672 25 loadbang;
+#X obj 1079 478 f \$0;
+#X msg 1079 455 bang;
+#X msg 1079 502 \; \$1-pitch1-r 42 \; \$1-pitch2-r 43 \; \$1-pitch3-r
+44 \; \$1-pitch4-r 45 \; \$1-pitch5-r 46 \; \$1-pitch6-r 47 \; \$1-pitch7-r
+48 \; \$1-pitch8-r 49 \; \$1-pitch9-r 50 \; \$1-pitch10-r 51 \; \$1-pitch11-r
+52 \; \$1-pitch12-r 53 \; \$1-pitch13-r -2 \; \$1-pitch14-r -2 \; \$1-pitch15-r
+-2 \; \$1-pitch16-r -2 \; \$1-pitch17-r -2 \; \$1-pitch18-r -2 \;;
+#X msg 672 49 12;
+#X connect 1 0 22 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 0 34 0;
+#X connect 9 0 1 0;
+#X connect 10 0 13 0;
+#X connect 11 0 28 0;
+#X connect 11 0 35 0;
+#X connect 11 0 57 0;
+#X connect 11 0 48 0;
+#X connect 11 0 42 0;
+#X connect 11 0 50 0;
+#X connect 11 0 49 0;
+#X connect 11 0 47 0;
+#X connect 11 0 46 0;
+#X connect 11 0 45 0;
+#X connect 11 0 44 0;
+#X connect 11 0 43 0;
+#X connect 11 0 41 0;
+#X connect 11 0 40 0;
+#X connect 12 0 33 0;
+#X connect 12 0 36 0;
+#X connect 13 0 12 0;
+#X connect 14 0 3 0;
+#X connect 15 0 14 0;
+#X connect 16 0 65 0;
+#X connect 16 0 56 0;
+#X connect 17 0 16 0;
+#X connect 18 0 67 0;
+#X connect 19 0 18 0;
+#X connect 20 0 66 0;
+#X connect 21 0 20 0;
+#X connect 22 0 12 0;
+#X connect 24 0 29 0;
+#X connect 25 0 24 0;
+#X connect 26 0 30 0;
+#X connect 27 0 26 0;
+#X connect 28 0 32 0;
+#X connect 28 1 27 0;
+#X connect 28 2 25 1;
+#X connect 28 3 31 0;
+#X connect 28 4 25 0;
+#X connect 29 0 23 1;
+#X connect 30 0 23 1;
+#X connect 31 0 23 0;
+#X connect 32 0 23 0;
+#X connect 33 0 11 0;
+#X connect 37 0 58 0;
+#X connect 40 0 15 0;
+#X connect 41 0 15 0;
+#X connect 42 0 15 0;
+#X connect 43 0 15 0;
+#X connect 44 0 15 0;
+#X connect 45 0 15 0;
+#X connect 46 0 15 0;
+#X connect 47 0 15 0;
+#X connect 48 0 15 0;
+#X connect 49 0 15 0;
+#X connect 50 0 15 0;
+#X connect 51 0 54 0;
+#X connect 51 0 55 0;
+#X connect 52 0 51 0;
+#X connect 54 0 53 0;
+#X connect 55 0 33 1;
+#X connect 57 0 15 0;
+#X connect 58 0 68 0;
+#X connect 73 0 77 0;
+#X connect 73 0 75 0;
+#X connect 74 0 76 0;
+#X connect 75 0 74 0;
+#X connect 77 0 52 0;
+#X coords 0 -1 1 1 500 356 2 10 10;

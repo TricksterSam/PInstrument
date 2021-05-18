@@ -1,0 +1,33 @@
+#N canvas 130 96 1170 421 12;
+#X obj 240 71 change;
+#X obj 101 245 int;
+#X obj 101 101 nbx 3 83 0 64 0 0 empty empty empty 0 -8 0 15 -262144
+-1 -1 0 256;
+#X obj 100 100 cnv 20 85 85 empty empty empty 2 18 0 28 -1 -66577 0
+;
+#X obj 102 102 cnv 20 81 81 empty \$0-pitch-r ~ 8 34 0 100 -204786
+-1 0;
+#X obj 240 305 s \$0-pitch-r;
+#X msg 240 131 label ~;
+#X msg 253 159 label ▲;
+#X msg 287 207 label ■;
+#X msg 273 183 label ◣;
+#X obj 240 98 sel 0 1 2 3;
+#X obj 101 221 / 16;
+#X obj 101 189 + 4;
+#X obj 382 304 outlet;
+#X connect 0 0 10 0;
+#X connect 0 0 13 0;
+#X connect 1 0 0 0;
+#X connect 2 0 12 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X connect 10 1 7 0;
+#X connect 10 2 9 0;
+#X connect 10 3 8 0;
+#X connect 11 0 1 0;
+#X connect 12 0 11 0;
+#X coords 0 -1 1 1 85 85 2 100 100;

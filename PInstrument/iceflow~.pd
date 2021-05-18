@@ -1,0 +1,213 @@
+#N canvas 433 170 1342 786 12;
+#X obj 10 10 cnv 5 500 356 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 12 24 sigrec~;
+#X obj 1074 415 jumbler~ \$0;
+#X obj 339 279 sigsend~;
+#X obj 424 279 sigsend~;
+#N canvas 480 331 930 546 rec_trigger 0;
+#X obj 87 102 snapshot~;
+#X obj 87 156 + 1;
+#X obj 87 204 int;
+#X obj 87 180 * 4.25;
+#X obj 87 47 inlet~;
+#X obj 87 308 outlet;
+#X obj 197 45 noise~;
+#X obj 238 181 f 0;
+#X obj 169 223 outlet;
+#X obj 169 174 != 0;
+#X obj 87 126 t f f b;
+#X obj 87 74 threshold~ 0.7 10 0.5 20;
+#X obj 238 157 del 120;
+#X obj 87 227 t b f;
+#X obj 87 274 f;
+#X obj 87 251 del 10;
+#X connect 0 0 10 0;
+#X connect 1 0 3 0;
+#X connect 2 0 13 0;
+#X connect 3 0 2 0;
+#X connect 4 0 11 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 9 0 8 0;
+#X connect 10 0 1 0;
+#X connect 10 1 9 0;
+#X connect 10 2 12 0;
+#X connect 11 0 0 0;
+#X connect 12 0 7 0;
+#X connect 13 0 15 0;
+#X connect 13 1 14 1;
+#X connect 14 0 5 0;
+#X connect 15 0 14 0;
+#X restore 1111 227 pd rec_trigger;
+#X obj 97 24 sigrec~;
+#X obj 182 24 sigrec~;
+#N canvas 167 260 738 484 play_trigger 0;
+#X obj 87 102 snapshot~;
+#X obj 87 126 + 1;
+#X obj 87 174 int;
+#X obj 87 150 * 4.25;
+#X obj 87 47 inlet~;
+#X obj 87 268 outlet;
+#X obj 197 45 noise~;
+#X obj 87 74 threshold~ 0.7 10 0.5 20;
+#X obj 87 198 t b f;
+#X obj 87 245 f;
+#X obj 87 222 del 10;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 8 0;
+#X connect 3 0 2 0;
+#X connect 4 0 7 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 10 0;
+#X connect 8 1 9 1;
+#X connect 9 0 5 0;
+#X connect 10 0 9 0;
+#X restore 1129 253 pd play_trigger;
+#X obj 11 152 bng 42 250 50 0 empty empty P 11 21 0 40 -1 -228856 -262144
+;
+#X obj 13 197 bng 81 250 50 0 empty empty clear_all 5 39 0 14 -204786
+-99865 -1;
+#X obj 712 446 int;
+#X obj 712 514 s \$0-mix-r;
+#X msg 712 487 label dry\\\ wet\\\ \$1;
+#X obj 937 524 line~;
+#X obj 1073 686 *~;
+#X obj 1147 686 *~;
+#X obj 1109 686 *~;
+#X obj 937 578 -~ 1;
+#X obj 947 548 *~;
+#X obj 937 602 abs~;
+#X obj 937 624 *~;
+#X obj 937 502 pack 0 4;
+#X obj 937 480 / 100;
+#X obj 13 387 switch~;
+#X obj 13 280 tgl 81 0 empty empty processing 6 39 0 12 -204786 -1
+-1 1 1;
+#X obj 99 10 cnv 10 81 12 empty empty record_trig 3 7 0 11 -262144
+-99865 0;
+#X obj 184 10 cnv 10 81 12 empty empty play_trig 3 7 0 11 -262144 -99865
+0;
+#X obj 14 10 cnv 10 81 12 empty empty audio_input 3 7 0 11 -262144
+-99865 0;
+#X obj 100 280 hsl 236 83 0 100 0 0 empty \$0-mix-r dry\\\ wet\\\ 0
+4 40 0 33 -204786 -1 -1 0 1;
+#X obj 341 265 cnv 10 81 12 empty empty left_out 3 7 0 11 -262144 -99865
+0;
+#X obj 426 265 cnv 10 81 12 empty empty right_out 3 7 0 11 -262144
+-99865 0;
+#X obj 565 15 select 0 1 2 3 4 5 6 7;
+#X obj 56 108 bng 42 250 50 0 empty empty R 9 21 0 40 -1 -228856 -262144
+;
+#X obj 99 108 bng 42 250 50 0 empty empty R 9 21 0 40 -1 -228856 -262144
+;
+#X obj 142 108 bng 42 250 50 0 empty empty R 9 21 0 40 -1 -228856 -262144
+;
+#X obj 185 108 bng 42 250 50 0 empty empty R 9 21 0 40 -1 -228856 -262144
+;
+#X obj 228 108 bng 42 250 50 0 empty empty R 9 21 0 40 -1 -228856 -262144
+;
+#X obj 271 108 bng 42 250 50 0 empty empty R 9 21 0 40 -1 -228856 -262144
+;
+#X obj 314 108 bng 42 250 50 0 empty empty R 9 21 0 40 -1 -228856 -262144
+;
+#X obj 54 152 bng 42 250 50 0 empty empty P 11 21 0 40 -1 -228856 -262144
+;
+#X obj 97 152 bng 42 250 50 0 empty empty P 11 21 0 40 -1 -228856 -262144
+;
+#X obj 140 152 bng 42 250 50 0 empty empty P 11 21 0 40 -1 -228856
+-262144;
+#X obj 183 152 bng 42 250 50 0 empty empty P 11 21 0 40 -1 -228856
+-262144;
+#X obj 226 152 bng 42 250 50 0 empty empty P 11 21 0 40 -1 -228856
+-262144;
+#X obj 269 152 bng 42 250 50 0 empty empty P 11 21 0 40 -1 -228856
+-262144;
+#X obj 312 152 bng 42 250 50 0 empty empty P 11 21 0 40 -1 -228856
+-262144;
+#X obj 761 46 select 0 1 2 3 4 5 6 7;
+#X obj 267 24 sigrec~;
+#X obj 269 10 cnv 10 81 12 empty empty clear_trig 3 7 0 11 -262144
+-99865 0;
+#N canvas 167 260 738 484 clear_trigger 0;
+#X obj 87 47 inlet~;
+#X obj 87 268 outlet;
+#X obj 87 74 threshold~ 0.7 10 0.5 20;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 1148 281 pd clear_trigger;
+#X obj 425 632 s~ \$0-detune;
+#X obj 352 24 sigrec~;
+#X obj 354 10 cnv 10 81 12 empty empty detune 3 7 0 11 -262144 -99865
+0;
+#X obj 100 195 hsl 236 83 0 100 0 0 empty \$0-spread-r detune\ spread\ 47%
+4 40 0 21 -204786 -1 -1 11200 1;
+#X obj 188 465 int;
+#X obj 188 533 s \$0-spread-r;
+#X msg 188 506 label detune\\\ spread\\\ \$1%;
+#X obj 392 492 *~;
+#X obj 425 436 / 100;
+#X obj 392 516 +~ 1;
+#X obj 13 108 bng 42 250 50 0 empty empty R 9 21 0 40 -1 -228856 -262144
+;
+#X connect 1 0 2 0;
+#X connect 1 0 17 1;
+#X connect 2 0 15 0;
+#X connect 2 1 16 0;
+#X connect 5 0 2 2;
+#X connect 5 0 32 0;
+#X connect 5 1 2 1;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 3;
+#X connect 8 0 47 0;
+#X connect 10 0 2 4;
+#X connect 11 0 13 0;
+#X connect 11 0 23 0;
+#X connect 13 0 12 0;
+#X connect 14 0 18 0;
+#X connect 14 0 19 0;
+#X connect 14 0 19 1;
+#X connect 15 0 3 0;
+#X connect 16 0 4 0;
+#X connect 17 0 3 0;
+#X connect 17 0 4 0;
+#X connect 18 0 20 0;
+#X connect 19 0 15 1;
+#X connect 19 0 16 1;
+#X connect 20 0 21 0;
+#X connect 20 0 21 1;
+#X connect 21 0 17 0;
+#X connect 22 0 14 0;
+#X connect 23 0 22 0;
+#X connect 25 0 24 0;
+#X connect 29 0 11 0;
+#X connect 32 0 61 0;
+#X connect 32 1 33 0;
+#X connect 32 2 34 0;
+#X connect 32 3 35 0;
+#X connect 32 4 36 0;
+#X connect 32 5 37 0;
+#X connect 32 6 38 0;
+#X connect 32 7 39 0;
+#X connect 47 0 9 0;
+#X connect 47 1 40 0;
+#X connect 47 2 41 0;
+#X connect 47 3 42 0;
+#X connect 47 4 43 0;
+#X connect 47 5 44 0;
+#X connect 47 6 45 0;
+#X connect 47 7 46 0;
+#X connect 48 0 50 0;
+#X connect 50 0 10 0;
+#X connect 52 0 58 0;
+#X connect 54 0 55 0;
+#X connect 54 0 59 0;
+#X connect 55 0 57 0;
+#X connect 57 0 56 0;
+#X connect 58 0 60 0;
+#X connect 59 0 58 1;
+#X connect 60 0 51 0;
+#X coords 0 -1 1 1 500 356 2 10 10;

@@ -1,0 +1,16 @@
+#N canvas 774 326 1048 702 12;
+#X obj 1 2 cnv 10 634 356 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 2 74 cnv 20 131 69 empty empty Turing_Machine 3 35 0 15 -204786
+-66577 0;
+#X obj 135 2 cnv 2 2 356 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 2 145 cnv 15 131 69 empty empty Phase_Sequence 3 35 0 15 -204786
+-66577 0;
+#X obj 2 3 cnv 20 131 69 empty empty Relabi_Waves 12 35 0 15 -204786
+-66577 0;
+#X obj 2 216 cnv 20 131 69 empty empty Turing_Machine 3 35 0 15 -204786
+-66577 0;
+#X obj 2 287 cnv 20 131 70 empty empty Ice_Flow 28 35 0 15 -204786
+-66577 0;
+#X obj 135 2 relabi~;

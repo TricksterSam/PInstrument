@@ -1,0 +1,430 @@
+#N canvas 2 8 674 401 12;
+#X obj 1 2 cnv 10 634 356 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#N canvas 37 432 1263 877 guipanel 0;
+#X obj 100 101 relabi~;
+#N canvas 0 535 955 327 routing 0;
+#X text 101 101 -INTERNAL ROUTING-;
+#X obj 363 50 catch~ 1-sigsend;
+#X obj 363 74 s~ 1-sigsend;
+#X obj 483 50 catch~ 2-sigsend;
+#X obj 483 74 s~ 2-sigsend;
+#X obj 610 50 catch~ 3-sigsend;
+#X obj 610 74 s~ 3-sigsend;
+#X obj 740 50 catch~ 4-sigsend;
+#X obj 740 74 s~ 4-sigsend;
+#X obj 363 97 catch~ 5-sigsend;
+#X obj 489 97 catch~ 6-sigsend;
+#X obj 615 97 catch~ 7-sigsend;
+#X obj 745 97 catch~ 8-sigsend;
+#X obj 363 121 s~ 5-sigsend;
+#X obj 489 121 s~ 6-sigsend;
+#X obj 615 121 s~ 7-sigsend;
+#X obj 745 121 s~ 8-sigsend;
+#X obj 363 143 catch~ 9-sigsend;
+#X obj 363 167 s~ 9-sigsend;
+#X obj 489 143 catch~ 10-sigsend;
+#X obj 489 167 s~ 10-sigsend;
+#X obj 615 143 catch~ 11-sigsend;
+#X obj 615 167 s~ 11-sigsend;
+#X obj 745 143 catch~ 12-sigsend;
+#X obj 745 167 s~ 12-sigsend;
+#X obj 363 189 catch~ 13-sigsend;
+#X obj 363 213 s~ 13-sigsend;
+#X obj 489 189 catch~ 14-sigsend;
+#X obj 489 213 s~ 14-sigsend;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 14 0;
+#X connect 11 0 15 0;
+#X connect 12 0 16 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 21 0 22 0;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X coords 0 -1 1 1 131 20 2 100 100;
+#X restore 1130 45 pd routing;
+#X obj 100 457 alanmachine~;
+#X obj 100 815 displacement~;
+#X obj 100 1171 fold_wave~;
+#X obj 100 1885 basic_sine~;
+#X obj 650 1528 iceflow~;
+#X msg 893 288 0;
+#X obj 821 413 pack f f;
+#X obj 847 251 t f f b;
+#X obj 847 288 != 0;
+#X msg 888 383 100;
+#X obj 821 545 s pd-guipanel;
+#X obj 845 224 inlet;
+#X floatatom 898 190 5 0 0 0 - - -;
+#X msg 821 519 donecanvasdialog 1 -1 \$1 0 -1 1 1 501 357 100 \$2;
+#X msg 929 384 457;
+#X msg 963 387 814;
+#X msg 998 386 1170;
+#X msg 1038 386 1527;
+#X msg 1083 386 1884;
+#X obj 912 103 r sel-relabi;
+#X msg 912 127 1;
+#X obj 1004 103 r sel-turing;
+#X msg 1004 127 2;
+#X msg 1097 127 3;
+#X msg 979 179 4;
+#X msg 1071 179 5;
+#X msg 1164 179 6;
+#X obj 979 155 r sel-fold;
+#X obj 1071 155 r sel-freeze;
+#X obj 1164 155 r sel-cosine;
+#X obj 1097 103 r sel-sequence;
+#X obj 1260 794 s;
+#X obj 1336 593 f;
+#X obj 1253 253 t b f f b b;
+#X msg 1269 281 color #c4fcc4 -1 -1;
+#X msg 1253 317 color #b4e4b4 -1 -1;
+#X msg 1278 365 symbol relabi-sel-r;
+#X msg 1288 388 symbol turing-sel-r;
+#X msg 1298 410 symbol sequence-sel-r;
+#X msg 1308 434 symbol fold-sel-r;
+#X msg 1318 457 symbol freeze-sel-r;
+#X msg 1328 480 symbol cosine-sel-r;
+#X msg 1336 639 symbol relabi-sel-r;
+#X msg 1346 662 symbol turing-sel-r;
+#X msg 1356 684 symbol sequence-sel-r;
+#X msg 1366 708 symbol fold-sel-r;
+#X msg 1376 731 symbol freeze-sel-r;
+#X msg 1386 754 symbol cosine-sel-r;
+#X obj 100 1528 vcapan~;
+#X obj 100 2242 clock~;
+#X obj 1205 103 r sel-clocks;
+#X msg 1205 127 7;
+#X msg 1126 385 2241;
+#X msg 1340 507 symbol clocks-sel-r;
+#X msg 1396 779 symbol clocks-sel-r;
+#X obj 100 2599 drums~;
+#X obj 1255 155 r sel-drums;
+#X msg 1255 179 8;
+#X msg 1167 385 2598;
+#X msg 1363 528 symbol drums-sel-r;
+#X msg 1408 801 symbol drums-sel-r;
+#X obj 100 2956 pitches~;
+#X obj 1300 103 r sel-pitches;
+#X msg 1300 127 9;
+#X msg 1208 385 2955;
+#X obj 870 316 sel 1 2 3 4 5 6 7 8 9;
+#X msg 1373 554 symbol pitches-sel-r;
+#X obj 1278 341 select 1 2 3 4 5 6 7 8 9;
+#X obj 1336 615 select 1 2 3 4 5 6 7 8 9;
+#X msg 1418 826 symbol pitches-sel-r;
+#X connect 7 0 8 0;
+#X connect 8 0 15 0;
+#X connect 9 0 10 0;
+#X connect 9 0 35 0;
+#X connect 9 1 67 0;
+#X connect 9 2 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 1;
+#X connect 13 0 9 0;
+#X connect 14 0 9 0;
+#X connect 15 0 12 0;
+#X connect 16 0 8 1;
+#X connect 17 0 8 1;
+#X connect 18 0 8 1;
+#X connect 19 0 8 1;
+#X connect 20 0 8 1;
+#X connect 21 0 22 0;
+#X connect 22 0 9 0;
+#X connect 23 0 24 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X connect 27 0 9 0;
+#X connect 28 0 9 0;
+#X connect 29 0 26 0;
+#X connect 30 0 27 0;
+#X connect 31 0 28 0;
+#X connect 32 0 25 0;
+#X connect 34 0 70 0;
+#X connect 35 0 37 0;
+#X connect 35 1 69 0;
+#X connect 35 2 34 1;
+#X connect 35 3 36 0;
+#X connect 35 4 34 0;
+#X connect 36 0 33 0;
+#X connect 37 0 33 0;
+#X connect 38 0 33 1;
+#X connect 39 0 33 1;
+#X connect 40 0 33 1;
+#X connect 41 0 33 1;
+#X connect 42 0 33 1;
+#X connect 43 0 33 1;
+#X connect 44 0 33 1;
+#X connect 45 0 33 1;
+#X connect 46 0 33 1;
+#X connect 47 0 33 1;
+#X connect 48 0 33 1;
+#X connect 49 0 33 1;
+#X connect 52 0 53 0;
+#X connect 53 0 9 0;
+#X connect 54 0 8 1;
+#X connect 55 0 33 1;
+#X connect 56 0 33 1;
+#X connect 58 0 59 0;
+#X connect 59 0 9 0;
+#X connect 60 0 8 1;
+#X connect 61 0 33 1;
+#X connect 62 0 33 1;
+#X connect 64 0 65 0;
+#X connect 65 0 9 0;
+#X connect 66 0 8 1;
+#X connect 67 0 11 0;
+#X connect 67 1 16 0;
+#X connect 67 2 17 0;
+#X connect 67 3 18 0;
+#X connect 67 4 19 0;
+#X connect 67 5 20 0;
+#X connect 67 6 54 0;
+#X connect 67 7 60 0;
+#X connect 67 8 66 0;
+#X connect 68 0 33 1;
+#X connect 69 0 38 0;
+#X connect 69 1 39 0;
+#X connect 69 2 40 0;
+#X connect 69 3 41 0;
+#X connect 69 4 42 0;
+#X connect 69 5 43 0;
+#X connect 69 6 55 0;
+#X connect 69 7 61 0;
+#X connect 69 8 68 0;
+#X connect 70 0 44 0;
+#X connect 70 1 45 0;
+#X connect 70 2 46 0;
+#X connect 70 3 47 0;
+#X connect 70 4 48 0;
+#X connect 70 5 49 0;
+#X connect 70 6 56 0;
+#X connect 70 7 62 0;
+#X connect 70 8 71 0;
+#X connect 71 0 33 1;
+#X coords 0 -1 1 1 501 357 1 100 2955;
+#X restore 134 2 pd guipanel;
+#X obj 900 48 namecanvas \$0-parent;
+#X obj 900 332 s \$0-parent;
+#X obj 863 163 r sel-relabi;
+#X obj 955 163 r sel-turing;
+#X obj 930 195 r sel-fold;
+#X obj 1022 195 r sel-freeze;
+#X obj 1115 195 r sel-cosine;
+#X obj 1048 163 r sel-sequence;
+#X obj 863 112 loadbang;
+#X obj 863 136 s sel-relabi;
+#X msg 900 308 editmode 0;
+#X msg 900 248 bang;
+#X obj 900 272 del 20;
+#N canvas 536 113 1059 992 nav 0;
+#X obj 174 100 bng 57 250 50 0 sel-relabi empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 100 bng 57 250 50 0 sel-relabi empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 100 bng 57 250 50 0 sel-relabi empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 100 cnv 20 131 57 empty relabi-sel-r Relabi_Waves 3 35 0
+15 -204786 -1 0;
+#X obj 174 159 bng 57 250 50 0 sel-turing empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 159 bng 57 250 50 0 sel-turing empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 159 bng 57 250 50 0 sel-turing empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 159 cnv 20 131 57 empty turing-sel-r Turing_Machine 3 35
+0 15 -204786 -1 0;
+#X obj 174 218 bng 57 250 50 0 sel-sequence empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 218 bng 57 250 50 0 sel-sequence empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 218 bng 57 250 50 0 sel-sequence empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 174 277 bng 57 250 50 0 sel-fold empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 277 bng 57 250 50 0 sel-fold empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 277 bng 57 250 50 0 sel-fold empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 174 336 bng 57 250 50 0 sel-freeze empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 336 bng 57 250 50 0 sel-freeze empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 336 bng 57 250 50 0 sel-freeze empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 174 395 bng 57 250 50 0 sel-cosine empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 395 bng 57 250 50 0 sel-cosine empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 395 bng 57 250 50 0 sel-cosine empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 218 cnv 15 131 57 empty sequence-sel-r Phase_Sequence 3
+35 0 15 -204786 -1 0;
+#X obj 100 277 cnv 20 131 57 empty fold-sel-r Wave_Folder 3 35 0 15
+-204786 -1 0;
+#X obj 100 336 cnv 30 131 57 empty freeze-sel-r VCA_Panner 3 35 0 15
+-204786 -1 0;
+#X obj 100 395 cnv 20 131 57 empty cosine-sel-r Quad_Cosines 3 35 0
+15 -204786 -1 0;
+#X msg 417 109 0;
+#X obj 345 282 pack f f;
+#X obj 371 82 t f f b;
+#X obj 371 109 != 0;
+#X msg 412 254 100;
+#X obj 371 34 r sel-up;
+#X obj 440 34 r sel-down;
+#X obj 371 58 f -1;
+#X obj 440 58 f 1;
+#X obj 393 144 +;
+#X floatatom 426 169 5 0 0 0 - - -;
+#X obj 279 14 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 308 14 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 315 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 597 149 namecanvas \$0-selector;
+#X obj 345 336 s \$0-selector;
+#X msg 522 257 277;
+#X msg 562 257 336;
+#X msg 607 257 395;
+#X msg 453 255 159;
+#X msg 487 258 218;
+#X msg 345 310 donecanvasdialog 1 -1 \$1 0 -1 1 1 133 236 100 \$2;
+#X obj 174 454 bng 57 250 50 0 sel-clocks empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 454 bng 57 250 50 0 sel-clocks empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 454 bng 57 250 50 0 sel-clocks empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 454 cnv 20 131 57 empty clocks-sel-r Clocks 3 35 0 15 -204786
+-1 0;
+#X msg 647 258 454;
+#X obj 174 632 bng 57 250 50 0 sel-relabi empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 632 bng 57 250 50 0 sel-relabi empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 632 bng 57 250 50 0 sel-relabi empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 632 cnv 20 131 57 empty relabi-sel-r Relabi_Waves 3 35 0
+15 -204786 -1 0;
+#X obj 174 691 bng 57 250 50 0 sel-turing empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 691 bng 57 250 50 0 sel-turing empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 691 bng 57 250 50 0 sel-turing empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 691 cnv 20 131 57 empty turing-sel-r Turing_Machine 3 35
+0 15 -204786 -1 0;
+#X obj 174 750 bng 57 250 50 0 sel-sequence empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 750 bng 57 250 50 0 sel-sequence empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 750 bng 57 250 50 0 sel-sequence empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 750 cnv 15 131 57 empty sequence-sel-r Phase_Sequence 3
+35 0 15 -204786 -1 0;
+#X msg 682 258 513;
+#X msg 718 258 572;
+#X obj 174 513 bng 57 250 50 0 sel-drums empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 513 bng 57 250 50 0 sel-drums empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 513 bng 57 250 50 0 sel-drums empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 513 cnv 20 131 57 empty drums-sel-r Drums 3 35 0 15 -204786
+-1 0;
+#X obj 174 572 bng 57 250 50 0 sel-pitches empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 572 bng 57 250 50 0 sel-pitches empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 572 bng 57 250 50 0 sel-pitches empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 572 cnv 20 131 57 empty pitches-sel-r Pitch_Tracker 3 35
+0 15 -188014 -1 0;
+#X msg 753 259 631;
+#X obj 399 222 sel 0 1 2 3 4 5 6 7 8 9;
+#X obj 426 145 mod 9;
+#X connect 24 0 25 0;
+#X connect 25 0 45 0;
+#X connect 26 0 27 0;
+#X connect 26 1 33 0;
+#X connect 26 2 24 0;
+#X connect 27 0 25 0;
+#X connect 28 0 25 1;
+#X connect 29 0 31 0;
+#X connect 30 0 32 0;
+#X connect 31 0 26 0;
+#X connect 32 0 26 0;
+#X connect 33 0 75 0;
+#X connect 35 0 31 0;
+#X connect 36 0 32 0;
+#X connect 37 0 25 0;
+#X connect 40 0 25 1;
+#X connect 41 0 25 1;
+#X connect 42 0 25 1;
+#X connect 43 0 25 1;
+#X connect 44 0 25 1;
+#X connect 45 0 39 0;
+#X connect 50 0 25 1;
+#X connect 63 0 25 1;
+#X connect 64 0 25 1;
+#X connect 73 0 25 1;
+#X connect 74 0 28 0;
+#X connect 74 1 43 0;
+#X connect 74 2 44 0;
+#X connect 74 3 40 0;
+#X connect 74 4 41 0;
+#X connect 74 5 42 0;
+#X connect 74 6 50 0;
+#X connect 74 7 63 0;
+#X connect 74 8 64 0;
+#X connect 74 9 73 0;
+#X connect 75 0 33 1;
+#X connect 75 0 34 0;
+#X connect 75 0 74 0;
+#X coords 0 -1 1 1 133 236 1 100 513;
+#X restore 2 63 pd nav;
+#X obj 2 5 bng 57 250 50 0 sel-up empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 42 4 bng 57 250 50 0 sel-up empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 76 4 bng 57 250 50 0 sel-up empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 2 4 cnv 20 131 57 empty cosine-sel-up UP 3 35 0 15 -204786 -1
+0;
+#X obj 2 298 bng 57 250 50 0 sel-down empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 76 298 bng 57 250 50 0 sel-down empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 32 298 bng 57 250 50 0 sel-down empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 2 298 cnv 20 131 57 empty cosine-sel-down DOWN 3 35 0 15 -204786
+-1 0;
+#X obj 1154 163 r sel-clocks;
+#X obj 1206 195 r sel-drums;
+#X obj 1246 163 r sel-pitches;
+#X obj 984 127 r sel-down;
+#X obj 967 98 r sel-up;
+#X connect 4 0 13 0;
+#X connect 5 0 13 0;
+#X connect 6 0 13 0;
+#X connect 7 0 13 0;
+#X connect 8 0 13 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 12 0 3 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 24 0 13 0;
+#X connect 25 0 13 0;
+#X connect 26 0 13 0;
+#X connect 27 0 13 0;
+#X connect 28 0 13 0;
