@@ -17,6 +17,8 @@ You can run this on any computer that can run Pure Data. If you'd like to use th
 
 With a little effort, you can script the Pi to boot Pure Data and your patch and choose your audio interface as it starts up.
 
+There're are [Youtube videos](https://www.youtube.com/watch?v=4OKeFUdwkBM&list=PLgyLwxm56Dvqr4tt8lrNM1o7uOgnfDGMi) demonstrating what it looks like and how it works.
+
 ## Growing module library
 The initial modules available are listed below. The touchscreen interface displays to the user a scrollable selection menu and the interface for one module. Selecting another module from the menu will display its controls. All modules run at the same time and can be patched together, no Eurorack needed! Input and output selectors can select audio interfaces inputs and outputs. These are displayed as numbers. Input and output selectors can also select internal routing, displayed as letters. The project includes a Pure Data abstraction that you can use to add these input and output selectors to your own project. Make sure to get the routing subpatch or they won't work!
 
